@@ -3,7 +3,7 @@ using namespace std;
 #include<string>
 class student
 {
-public://初始化调动里面的对象函数直接初始化
+public://
 	void putin(const char*aname = "noname", int x = 0, int y = 0)
 	{
 		strcpy_s(name, (strlen(aname) + 1), aname);
