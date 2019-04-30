@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+#include<string>
+class student
+{
+public://初始化调动里面的对象函数直接初始化
+	void putin(const char*aname = "noname", int x = 0, int y = 0)
+	{
+		strcpy_s(name, (strlen(aname) + 1), aname);
+		name[sizeof(name) - 1]='\0';
+		number = x;
+		classid = y;
+	}
+	~student()
+	{
+		cout << "destructing student:" << name << endl;
+	}
+protected:
+	char name[20];
+	int  number;
+	int classid;
+};
+class classes
+{
+public:
+
+
+	classes()
+	{
+		int d, e;
+		char aoname[10];
+		for (int i = 0; i < 2; i++)
+		{
+
+			cin >> aoname >> d >> e;
+			aoname[sizeof(aoname) - 1] = '\0';
+			student[i].putin(aoname, d, e);
+
+		};
+
+	}
+	~classes()
+	{
+		cout << "destructing class:" << classname << endl;
+	}
+protected:
+	student student[2];
+	char classname;
+};
+class college
+{
+public:
+	college(const char*aname = "noname", int x = 0, int y = 0)
+	{
+		strcpy_s(classname, (strlen(aname) + 1), aname);
+		classname[sizeof(classname) - 1] = '\0';
+	}
+
+	~college()
+	{
+		cout << "destructing college:" << classname << endl;
+	}
+protected:
+	classes classes[3];
+	char classname[20];
+};
+int main()
+{
+	college a("cqupt", 1, 2);
+
+
+}
