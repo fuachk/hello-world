@@ -225,7 +225,7 @@ echo microtime(),'<br/>';
 * include 系统碰到一次执行一次 
 * include_once 系统碰到多次，只执行一次。
 *  include的错误级别较低不会阻止代码执行
-*   require要求较高，出现代码错误不再执行。
+*   require要求较高，出现代码错误不再执行require后面的代码。
 
 
 
